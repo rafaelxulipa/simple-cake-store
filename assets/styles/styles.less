@@ -132,6 +132,11 @@ input[type="date"]::-webkit-inner-spin-button {
     font-weight: bold;;
     border-radius: 100px;
     padding: 0.5rem 1.5rem;
+    font-size: @fontSizeXS;
+
+    @media (min-width: 768px) {
+      font-size: @baseFontSize;
+    }
 
     &:hover {
         background-color: @dark-green;
