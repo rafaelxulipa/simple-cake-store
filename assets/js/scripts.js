@@ -4,7 +4,7 @@ $("#cakeForm").submit(function(event){
     event.preventDefault();
  });
 
-$('#inputDate').attr('min', new Date().toISOString().split("T")[0])
+$('#inputDate').attr('min', new Date().toISOString().split("T")[0]);
 
 $("#inputZipcode").focusout(function () {
     $.ajax({
@@ -16,7 +16,6 @@ $("#inputZipcode").focusout(function () {
         success: function (resposta) {
             $("#inputAddress").val(resposta.logradouro);
             $("#inputAddress2").val(resposta.complemento);
-            $("#inputDistrict").val(resposta.bairro);
             $("#inputCity").val(resposta.localidade);
             $("#inputState").val(resposta.uf);
 

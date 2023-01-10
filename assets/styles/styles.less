@@ -1,12 +1,14 @@
 /* Para responsividade usei a metodologia do "THINKING MOBILE FIRST"*/
 
 // Paleta de cores
-@dark-green: #468847;
-@blue-pastel: #3a87ad;
-@black: #202020;
+@blue-title: #345d93;
+@blue-dark: #24457b;
+@blue-default: #345189;
 @blue: #049cdb;
 @grayLight: #999;
-@warning: 	#b94a48;
+@warning: 	#ff0000;
+@blue-light: #ebf6fc;
+@orange-light: #c5964b;
 
 // Sizes
 @baseFontSize: 1rem;
@@ -14,20 +16,21 @@
 @fontSizeXS: 0.675rem;
 @fontSizeSM: 1.5rem;
 @fontSizeMD: 1.75rem;
-@fontSizeLG: 3rem;
+@fontSizeLG: 2rem;
 
 // Fontes
-@fonte_h1: bold @fontSizeLG "Times New Roman", Arial;
-@fonte_h1_mobile: bold @fontSizeSM "Times New Roman", Arial;
-@fonte_h2: bold @fontSizeMD "Times New Roman", Arial;
+@fonte_h1: bold @fontSizeLG "Roboto", Arial;
+@fonte_h2: bold @fontSizeMD "Roboto", Arial;
+@fonte_mobile: bold @baseFontSize "Roboto", Arial;
 
-body {
+.body-container {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     gap: 8px;
+    background-color: @blue-light;
 
 }
 
@@ -44,24 +47,27 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 .section1 {
-  padding: 1rem 1rem 0 1rem;
-  border-bottom: 1px solid @dark-green;
+  padding-top: 1rem;
+  padding-left: 0.5rem;
+  border-bottom: 1px solid @blue-title;
+  max-width: 576px;
 
   &__title {
-    color: @dark-green;
-    font: @fonte_h1_mobile;
-    text-align: start;
+    color: @blue-title;
+    font: @fonte_mobile;
+    text-align: center;
 
-    @media (min-width: 768px) {
+    @media (min-width: 460px) {
       font: @fonte_h1;
+      text-align: start;
     }
   }
 
   &__subtitle {
-    color: @blue-pastel;
+    color: @blue-dark;
     font-size: @fontSizeXS;
 
-    @media (min-width: 768px) {
+    @media (min-width: 460px) {
       font-size: @baseFontSize;
     }
   }
@@ -99,7 +105,7 @@ input[type="date"]::-webkit-inner-spin-button {
   padding: 0 1rem;
 
   .col-form-label {
-    color: @black;
+    color: @blue-default;
     font-size: @fontSizeXS;
     text-align: justify;
     margin: 0.5rem 0;
@@ -110,13 +116,24 @@ input[type="date"]::-webkit-inner-spin-button {
   }
 
   &__subtitle {
-    color: @dark-green;
-    font: @fonte_h2;
+    color: @blue-title;
+    font: @fonte_mobile;
     text-align: start;
+    text-decoration: underline;
+
+    @media (min-width: 768px) {
+      font: @fonte_h2
+    }
   }
 
   .required {
     color: @warning;
+  }
+
+  .receipt {
+    color: @orange-light;
+    font-size: @fontSizeXS;
+    padding-left: 0.1rem;
   }
 
   .form-group {
@@ -125,7 +142,7 @@ input[type="date"]::-webkit-inner-spin-button {
 
   .form-label {
     margin: 0.5rem 0;
-    color: @black;
+    color: @blue-default;
     font-size: @baseFontSize;
   }
 
@@ -141,13 +158,14 @@ input[type="date"]::-webkit-inner-spin-button {
     border-radius: 100px;
     padding: 0.5rem 1.5rem;
     font-size: @fontSizeXS;
+    background-color: @blue-dark;
 
     @media (min-width: 768px) {
       font-size: @baseFontSize;
     }
 
     &:hover {
-        background-color: @dark-green;
+        background-color: @blue-title;
     }
   }
 }
