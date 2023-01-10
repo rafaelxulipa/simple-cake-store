@@ -50,7 +50,7 @@ input[type="date"]::-webkit-inner-spin-button {
   &__title {
     color: @dark-green;
     font: @fonte_h1_mobile;
-    text-align: center;
+    text-align: start;
 
     @media (min-width: 768px) {
       font: @fonte_h1;
@@ -69,18 +69,26 @@ input[type="date"]::-webkit-inner-spin-button {
 
 .cake {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 390px) {
+    flex-direction: row;
+  }
+
+
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 10px;
+  max-width: 576px;
 
   &__img {
     width: 100%;
     height: 100%;
-    max-width: 75px;
-    max-height: 75px;
+    max-width: 180px;
+    max-height: 180px;
 
-    @media (min-width: 768px) {
+    @media (max-width: 460px) {
       max-width: 150px;
       max-height: 150px;
     }
@@ -104,7 +112,7 @@ input[type="date"]::-webkit-inner-spin-button {
   &__subtitle {
     color: @dark-green;
     font: @fonte_h2;
-    text-align: center;
+    text-align: start;
   }
 
   .required {
